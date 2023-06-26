@@ -1,6 +1,6 @@
 .TH DWM 1 dwm\-VERSION
 .SH NAME
-dwm \- dynamic window manager
+dwm \- dynamic window manager (nimrod's build)
 .SH SYNOPSIS
 .B dwm
 .RB [ \-v ]
@@ -43,17 +43,8 @@ is read and displayed in the status text area. It can be set with the
 command.
 .TP
 .B Button1
-click on a tag label to display all windows with that tag, click on the layout
+click on a tag label to display all windows with that tag; click on the layout
 label toggles between tiled and floating layout.
-.TP
-.B Button3
-click on a tag label adds/removes all windows with that tag to/from the view.
-.TP
-.B Mod4\-Button1
-click on a tag label applies that tag to the focused window.
-.TP
-.B Mod4\-Button3
-click on a tag label adds/removes that tag to/from the focused window.
 .SS Keyboard commands
 .TP
 .B Mod4\-p
@@ -62,16 +53,17 @@ Spawn
 for launching other programs.
 .TP
 .B Mod4\-Shift\-Return
-Start the terminal program referenced by the $TERMINAL environment variable.
+Start terminal program referenced by the $TERMINAL environment variable
 .TP
 .B Mod4\-Shift\-h
-Start the process manager htop.
+Start process manager
+.BR htop(1)
 .TP
 .B Mod4\-Shift\-e
-Start the terminal-based text-editor referenced by the $EDITOR environment variable.
+Start terminal-based text-editor referenced by the $EDITOR environment variable.
 .TP
 .B Mod4\-Shift\-b
-Start the web-browser referenced to by the $BROWSER environment variable.
+Start web-browser referenced to by the $BROWSER environment variable.
 .TP
 .B Mod4\-Shift\-l
 Start the passmenu program.
@@ -88,14 +80,23 @@ Decrease master area size.
 .B Mod4\-l
 Increase master area size.
 .TP
-.B Mod4\-i
-Increase number of windows in master area.
-.TP
-.B Mod4\-d
-Decrease number of windows in master area.
-.TP
 .B Mod4\-Return
 Zooms/cycles focused window to/from master area (tiled layouts only).
+.TP
+.B Mod4\-o
+Increase number of windows in master area.
+.TP
+.B Mod4\-Shift\-o
+Decrease number of windows in master area.
+.TP
+.B Mod4\-z
+Increase size of gaps between windows
+.TP
+.B Mod4\-x
+Decrease size of gaps between windows
+.TP
+.B Mod4\-a
+Toggles window gaps on or off
 .TP
 .B Mod4\-b
 Toggles bar on and off.
@@ -147,15 +148,27 @@ Add/remove nth tag to/from focused window.
 .TP
 .B Mod4\-Shift\-q
 Quit dwm.
+.TP
+.B VolumeUp
+Increase the volume by 10%
+.TP
+.B VolumeDown
+Decrease the volume by 10%
+.TP
+.B VolumeMute
+Toggle volume on or off
+.TP
+.B BrightnessUp
+Increase the screen brightness by 10%
+.TP
+.B BrightnessDown
+Decrease the screen brightness by 10%
 .SS Mouse commands
 .TP
-.B Mod4\-Button1
+.B Mod4\-LeftClick
 Move focused window while dragging. Tiled windows will be toggled to the floating state.
 .TP
-.B Mod4\-Button2
-Toggles focused window between floating and tiled state.
-.TP
-.B Mod4\-Button3
+.B Mod4\-RightClick
 Resize focused window while dragging. Tiled windows will be toggled to the floating state.
 .SH CUSTOMIZATION
 dwm is customized by editing config.h and (re)compiling the source
