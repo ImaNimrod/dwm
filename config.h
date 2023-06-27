@@ -58,8 +58,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0";      /* component of dmenucmd, manipulated in spawn() */
-static char dmenulines[3] = "15";   /* component of dmenucmd, the number of menu options dmenu displays */
-static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", dmenulines, "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_highlight, "-sf", col_gray4, NULL };
+static char dmenulines[] = "20";    /* number of lines dmenu displays */
+static char dmenuborder[] = "5";    /* dmenu border weight */
+static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", dmenulines, "-bw", dmenuborder, "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_highlight, "-sf", col_gray4, NULL };
 
 #include <X11/XF86keysym.h>
 

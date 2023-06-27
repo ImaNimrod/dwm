@@ -1,4 +1,4 @@
-# dwm - My personal configuration
+# dwm - My personal build
 
 ## Installation
 First acquire the source code:
