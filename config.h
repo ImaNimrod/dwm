@@ -65,43 +65,43 @@ static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", dmenulines, "-bw", dm
 #include <X11/XF86keysym.h>
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+    /* modifier                     key        function        argument */
+    { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("$TERMINAL") },
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("$TERMINAL -e htop") },
     { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("$TERMINAL -e nvim") },
     { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("$BROWSER") },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("passmenu") },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+    { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
+    { MODKEY,                       XK_Return, zoom,           {0} },
     { MODKEY,                       XK_z,      setgaps,        {.i = +1 } },
     { MODKEY,                       XK_x,      setgaps,        {.i = -1 } },
     { MODKEY,                       XK_a,      togglegaps,     {0} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-    { MODKEY,                       XK_w,      spawn,          SHCMD("setbg") },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,      togglefloating, {0} },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+    { MODKEY,                       XK_Return, zoom,           {0} },
+    { MODKEY,                       XK_b,      togglebar,      {0} },
+    { MODKEY,                       XK_w,      spawn,          SHCMD("wallpaper") },
+    { MODKEY,			            XK_Print,  spawn,		   SHCMD("screenshot") },
+    { MODKEY,                       XK_q,      killclient,     {0} },
+    { MODKEY,                       XK_space,  setlayout,      {0} },
+    { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+    { MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                       XK_f,      togglefloating, {0} },
+    { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+    { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+    TAGKEYS(                        XK_1,                      0)
+    TAGKEYS(                        XK_2,                      1)
+    TAGKEYS(                        XK_3,                      2)
+    TAGKEYS(                        XK_4,                      3)
+    TAGKEYS(                        XK_5,                      4)
+    { MODKEY,                       XK_Tab,    view,           {0} },
+    { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
     { 0, XF86XK_AudioRaiseVolume,			   spawn,		   SHCMD("amixer set 'Master' 10%+") },
     { 0, XF86XK_AudioLowerVolume,			   spawn,		   SHCMD("amixer set 'Master' 10%-") },
     { 0, XF86XK_AudioMute,			           spawn,		   SHCMD("amixer sset 'Master' toggle") },
