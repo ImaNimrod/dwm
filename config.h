@@ -7,8 +7,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "mononoki Nerd Font:size=16:autohint=true:antialias=true", "JoyPixels:pixelsize=11" };
-static const char dmenufont[]       = "mononoki Nerd Font:size=16:autohint=true:antialias=true";
+static const char *fonts[]          = { "mononoki:size=16:autohint=true:antialias=true", "JoyPixels:pixelsize=11" };
+static const char dmenufont[]       = "mononoki:size=16:autohint=true:antialias=true";
 static const char col_gray1[]       = "#262731";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#ffffff";
@@ -71,7 +71,6 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("$TERMINAL -e htop") },
     { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("$TERMINAL -e nvim") },
     { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("$BROWSER") },
-    { MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("virt-manager") },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("passmenu") },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
