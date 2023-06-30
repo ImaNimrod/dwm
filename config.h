@@ -71,6 +71,8 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_h,      spawn,          SHCMD("$TERMINAL -e htop") },
     { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("$TERMINAL -e nvim") },
     { MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("$BROWSER") },
+    { MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("virt-manager") },
+    { MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERMINAL -e ncmpcpp") },
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("passmenu") },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
