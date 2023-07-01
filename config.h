@@ -30,7 +30,7 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "qemu",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Qemu-system-x86_64",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
