@@ -7,8 +7,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "mononoki:size=14:autohint=true:antialias=true", "JoyPixels:pixelsize=11" };
-static const char dmenufont[]       = "mononoki:size=14:autohint=true:antialias=true";
+static const char *fonts[]          = { "mononoki Nerd Font:size=14:autohint=true:antialias=true", "JoyPixels:pixelsize=11" };
+static const char dmenufont[]       = "mononoki Nerd Font:size=14:autohint=true:antialias=true";
 static const char col_gray1[]       = "#262731";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#ffffff";
