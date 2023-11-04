@@ -7,8 +7,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "mononoki Nerd Font:size=14:autohint=true:antialias=true", "JoyPixels:pixelsize=11" };
-static const char dmenufont[]       = "mononoki Nerd Font:size=14:autohint=true:antialias=true";
+static const char *fonts[]          = { "mononoki Nerd Font:size=16:autohint=true:antialias=true", "JoyPixels:pixelsize=11" };
+static const char dmenufont[]       = "mononoki Nerd Font:size=16:autohint=true:antialias=true";
 static const char col_gray1[]       = "#262731";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#ffffff";
@@ -104,9 +104,12 @@ static const Key keys[] = {
     TAGKEYS(                        XK_5,                      4)
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-    { 0, XF86XK_AudioRaiseVolume,			   spawn,		   SHCMD("amixer set 'Master' 10%+") },
-    { 0, XF86XK_AudioLowerVolume,			   spawn,		   SHCMD("amixer set 'Master' 10%-") },
-    { 0, XF86XK_AudioMute,			           spawn,		   SHCMD("amixer sset 'Master' toggle") },
+    { 0, XF86XK_AudioRaiseVolume,			   spawn,		   SHCMD("amixer -c 1 set 'Master' 10%+") },
+    { 0, XF86XK_AudioLowerVolume,			   spawn,		   SHCMD("amixer -c 1 set 'Master' 10%-") },
+    { 0, XF86XK_AudioMute,			           spawn,		   SHCMD("amixer -c 1 sset 'Master' toggle") },
+    { 0, XF86XK_AudioPrev,			           spawn,		   SHCMD("mpc prev") },
+    { 0, XF86XK_AudioNext,			           spawn,		   SHCMD("mpc next") },
+    { 0, XF86XK_AudioPlay,			           spawn,		   SHCMD("mpc toggle") },
     { 0, XF86XK_MonBrightnessUp,			   spawn,		   SHCMD("xbacklight -inc 10") },
     { 0, XF86XK_MonBrightnessDown,			   spawn,		   SHCMD("xbacklight -dec 10") },
 };
