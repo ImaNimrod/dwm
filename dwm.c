@@ -1242,7 +1242,7 @@ monocle(Monitor *m)
 	if (n > 0) /* override layout symbol */
 		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
-		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
+		resize(c, m->wx + m->gappx*enablegaps, m->wy + m->gappx*enablegaps, m->ww - (2 * c->bw) - (2 * m->gappx*enablegaps), m->wh - (2 * c->bw) - (2 * m->gappx*enablegaps), 0);
 }
 
 void
