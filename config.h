@@ -28,10 +28,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "Qemu-system-x86_64",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class                    instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "St",                     NULL,     NULL,           0,         0,          1,           0,        -1 }, /* suckless simple terminal */
+	{ "Qemu-system-x86_64",     NULL,     NULL,           0,         1,          0,           0,        -1 }, /* qemu */
+	{ "Virt-viewer",            NULL,     NULL,           0,         1,          0,           0,        -1 }, /* virt-viwer */
+	{ NULL,                     NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
