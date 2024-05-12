@@ -15,24 +15,24 @@ static const char col_gray3[]       = "#ffffff";
 static const char col_gray4[]       = "#ffffff";
 static const char col_highlight[]   = "#6f00be";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_highlight, col_highlight },
+    /*               fg         bg         border   */
+    [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+    [SchemeSel]  = { col_gray4, col_highlight, col_highlight },
 };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class                    instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "St",                     NULL,     NULL,           0,         0,          1,           0,        -1 }, /* suckless simple terminal */
-	{ "Qemu-system-x86_64",     NULL,     NULL,           0,         1,          0,           0,        -1 }, /* qemu */
-	{ "Virt-viewer",            NULL,     NULL,           0,         1,          0,           0,        -1 }, /* virt-viwer */
-	{ NULL,                     NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+    /* xprop(1):
+     *	WM_CLASS(STRING) = instance, class
+     *	WM_NAME(STRING) = title
+     */
+    /* class                    instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+    { "St",                     NULL,     NULL,           0,         0,          1,           0,        -1 }, /* suckless simple terminal */
+    { "Qemu-system-x86_64",     NULL,     NULL,           0,         1,          0,           0,        -1 }, /* qemu */
+    { "Virt-viewer",            NULL,     NULL,           0,         1,          0,           0,        -1 }, /* virt-viwer */
+    { NULL,                     NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -42,18 +42,18 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
+    /* symbol     arrange function */
+    { "[]=",      tile },    /* first entry is default */
+    { "[M]",      monocle },
 };
 
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -107,9 +107,9 @@ static const Key keys[] = {
     TAGKEYS(                        XK_5,                           4)
     { MODKEY,                       XK_Tab,         view,           {0} },
     { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
-    { 0, XF86XK_AudioRaiseVolume,			        spawn,		    SHCMD("amixer -c 1 set 'Master' 10%+") },
-    { 0, XF86XK_AudioLowerVolume,			        spawn,		    SHCMD("amixer -c 1 set 'Master' 10%-") },
-    { 0, XF86XK_AudioMute,			                spawn,		    SHCMD("amixer -c 1 sset 'Master' toggle") },
+    { 0, XF86XK_AudioRaiseVolume,			        spawn,		    SHCMD("amixer set 'Master' 10%+") },
+    { 0, XF86XK_AudioLowerVolume,			        spawn,		    SHCMD("amixer set 'Master' 10%-") },
+    { 0, XF86XK_AudioMute,			                spawn,		    SHCMD("amixer sset 'Master' toggle") },
     { 0, XF86XK_AudioPrev,			                spawn,		    SHCMD("mpc prev") },
     { 0, XF86XK_AudioNext,			                spawn,		    SHCMD("mpc next") },
     { 0, XF86XK_AudioPlay,			                spawn,		    SHCMD("mpc toggle") },
@@ -120,11 +120,11 @@ static const Key keys[] = {
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
-	/* click                event mask      button          function        argument */
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+    /* click                event mask      button          function        argument */
+    { ClkTagBar,            0,              Button1,        view,           {0} },
+    { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+    { ClkTagBar,            0,              Button3,        toggleview,     {0} },
+    { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 };
 
