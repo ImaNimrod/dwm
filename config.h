@@ -107,9 +107,9 @@ static const Key keys[] = {
     TAGKEYS(                        XK_5,                           4)
     { MODKEY,                       XK_Tab,         view,           {0} },
     { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
-    { 0, XF86XK_AudioRaiseVolume,			        spawn,		    SHCMD("amixer set 'Master' 10%+") },
-    { 0, XF86XK_AudioLowerVolume,			        spawn,		    SHCMD("amixer set 'Master' 10%-") },
-    { 0, XF86XK_AudioMute,			                spawn,		    SHCMD("amixer sset 'Master' toggle") },
+    { 0, XF86XK_AudioRaiseVolume,			        spawn,		    SHCMD("wpctl set-volume @DEFAULT_SINK@ 10%+") },
+    { 0, XF86XK_AudioLowerVolume,			        spawn,		    SHCMD("wpctl set-volume @DEFAULT_SINK@ 10%-") },
+    { 0, XF86XK_AudioMute,			                spawn,		    SHCMD("wpctl set-mute @DEFAULT_SINK@ toggle") },
     { 0, XF86XK_AudioPrev,			                spawn,		    SHCMD("mpc prev") },
     { 0, XF86XK_AudioNext,			                spawn,		    SHCMD("mpc next") },
     { 0, XF86XK_AudioPlay,			                spawn,		    SHCMD("mpc toggle") },
