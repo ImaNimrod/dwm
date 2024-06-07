@@ -91,6 +91,7 @@ static const Key keys[] = {
     { MODKEY,			            XK_Print,       spawn,		    SHCMD("screenshot") },
     { MODKEY,			            XK_backslash,   spawn,          SHCMD("nowplaying") },
     { MODKEY,			            XK_F1,          spawn,          SHCMD("mansplainer") },
+    { MODKEY,			            XK_F9,          spawn,          SHCMD("mediaplayer") },
     { MODKEY,                       XK_q,           killclient,     {0} },
     { MODKEY,                       XK_space,       setlayout,      {0} },
     { MODKEY,                       XK_t,           setlayout,      {.v = &layouts[0]} },
@@ -100,11 +101,6 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
     { MODKEY,                       XK_0,           view,           {.ui = ~0 } },
     { MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
-    TAGKEYS(                        XK_1,                           0)
-    TAGKEYS(                        XK_2,                           1)
-    TAGKEYS(                        XK_3,                           2)
-    TAGKEYS(                        XK_4,                           3)
-    TAGKEYS(                        XK_5,                           4)
     { MODKEY,                       XK_Tab,         view,           {0} },
     { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
     { 0, XF86XK_AudioRaiseVolume,			        spawn,		    SHCMD("wpctl set-volume @DEFAULT_SINK@ 10%+") },
@@ -115,6 +111,11 @@ static const Key keys[] = {
     { 0, XF86XK_AudioPlay,			                spawn,		    SHCMD("mpc toggle") },
     { 0, XF86XK_MonBrightnessUp,			        spawn,		    SHCMD("xbacklight -inc 10") },
     { 0, XF86XK_MonBrightnessDown,			        spawn,		    SHCMD("xbacklight -dec 10") },
+    TAGKEYS(                        XK_1,                           0)
+    TAGKEYS(                        XK_2,                           1)
+    TAGKEYS(                        XK_3,                           2)
+    TAGKEYS(                        XK_4,                           3)
+    TAGKEYS(                        XK_5,                           4)
 };
 
 /* button definitions */
@@ -127,4 +128,3 @@ static const Button buttons[] = {
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
     { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 };
-
