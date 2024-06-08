@@ -111,6 +111,9 @@ static const Key keys[] = {
     { 0, XF86XK_AudioPlay,			                spawn,		    SHCMD("mpc toggle") },
     { 0, XF86XK_MonBrightnessUp,			        spawn,		    SHCMD("xbacklight -inc 10") },
     { 0, XF86XK_MonBrightnessDown,			        spawn,		    SHCMD("xbacklight -dec 10") },
+    { 0, XF86XK_TouchpadToggle,	                    spawn,		    SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
+    { 0, XF86XK_TouchpadOn,	                        spawn,		    SHCMD("synclient TouchpadOff=0") },
+    { 0, XF86XK_TouchpadOff,	                    spawn,		    SHCMD("synclient TouchpadOff=1") },
     TAGKEYS(                        XK_1,                           0)
     TAGKEYS(                        XK_2,                           1)
     TAGKEYS(                        XK_3,                           2)
