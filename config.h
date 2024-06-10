@@ -11,7 +11,7 @@ static const char *fonts[]          = { "mononoki Nerd Font:size=16:autohint=tru
 static const char dmenufont[]       = "mononoki Nerd Font:size=16:autohint=true:antialias=true";
 static const char col_gray1[]       = "#262731";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#ffffff";
+static const char col_gray3[]       = "#dedede";
 static const char col_gray4[]       = "#ffffff";
 static const char col_highlight[]   = "#6f00be";
 static const char *colors[][3]      = {
@@ -88,13 +88,13 @@ static const Key keys[] = {
     { MODKEY,                       XK_a,           togglegaps,     {0} },
     { MODKEY,                       XK_b,           togglebar,      {0} },
     { MODKEY,                       XK_w,           spawn,          SHCMD("wallpaper") },
-    { MODKEY,			            XK_Print,       spawn,		    SHCMD("screenshot") },
-    { MODKEY,			            XK_backslash,   spawn,          SHCMD("nowplaying") },
-    { MODKEY,			            XK_F1,          spawn,          SHCMD("mansplainer") },
-    { MODKEY,			            XK_F9,          spawn,          SHCMD("mediaplayer") },
-    { MODKEY,			            XK_F10,         spawn,          SHCMD("mounter") },
-    { MODKEY,			            XK_F11,         spawn,          SHCMD("unmounter") },
-    { MODKEY,			            XK_F12,         spawn,          SHCMD("displayselect") },
+    { MODKEY,                       XK_Print,       spawn,          SHCMD("screenshot") },
+    { MODKEY,                       XK_backslash,   spawn,          SHCMD("nowplaying") },
+    { MODKEY,                       XK_F1,          spawn,          SHCMD("mansplainer") },
+    { MODKEY,                       XK_F9,          spawn,          SHCMD("mediaplayer") },
+    { MODKEY,                       XK_F10,         spawn,          SHCMD("mounter") },
+    { MODKEY,                       XK_F11,         spawn,          SHCMD("unmounter") },
+    { MODKEY,                       XK_F12,         spawn,          SHCMD("displayselect") },
     { MODKEY,                       XK_q,           killclient,     {0} },
     { MODKEY,                       XK_space,       setlayout,      {0} },
     { MODKEY,                       XK_t,           setlayout,      {.v = &layouts[0]} },
@@ -106,22 +106,22 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
     { MODKEY,                       XK_Tab,         view,           {0} },
     { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
-    { 0, XF86XK_AudioRaiseVolume,			        spawn,		    SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+") },
-    { 0, XF86XK_AudioLowerVolume,			        spawn,		    SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%-") },
-    { 0, XF86XK_AudioMute,			                spawn,		    SHCMD("wpctl set-mute @DEFAULT_SINK@ toggle") },
-    { 0, XF86XK_AudioPrev,			                spawn,		    SHCMD("mpc prev") },
-    { 0, XF86XK_AudioNext,			                spawn,		    SHCMD("mpc next") },
-    { 0, XF86XK_AudioPlay,			                spawn,		    SHCMD("mpc toggle") },
-    { 0, XF86XK_MonBrightnessUp,			        spawn,		    SHCMD("xbacklight -inc 15") },
-    { 0, XF86XK_MonBrightnessDown,			        spawn,		    SHCMD("xbacklight -dec 15") },
-    { 0, XF86XK_TouchpadToggle,	                    spawn,		    SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
-    { 0, XF86XK_TouchpadOn,	                        spawn,		    SHCMD("synclient TouchpadOff=0") },
-    { 0, XF86XK_TouchpadOff,	                    spawn,		    SHCMD("synclient TouchpadOff=1") },
-    TAGKEYS(                        XK_1,                           0)
-    TAGKEYS(                        XK_2,                           1)
-    TAGKEYS(                        XK_3,                           2)
-    TAGKEYS(                        XK_4,                           3)
-    TAGKEYS(                        XK_5,                           4)
+    { 0, XF86XK_AudioRaiseVolume,                   spawn,          SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+") },
+    { 0, XF86XK_AudioLowerVolume,                   spawn,          SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%-") },
+    { 0, XF86XK_AudioMute,                          spawn,          SHCMD("wpctl set-mute @DEFAULT_SINK@ toggle") },
+    { 0, XF86XK_AudioPrev,                          spawn,          SHCMD("mpc prev") },
+    { 0, XF86XK_AudioNext,                          spawn,          SHCMD("mpc next") },
+    { 0, XF86XK_AudioPlay,                          spawn,          SHCMD("mpc toggle") },
+    { 0, XF86XK_MonBrightnessUp,                    spawn,          SHCMD("xbacklight -inc 15") },
+    { 0, XF86XK_MonBrightnessDown,                  spawn,          SHCMD("xbacklight -dec 15") },
+    { 0, XF86XK_TouchpadToggle,                     spawn,          SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
+    { 0, XF86XK_TouchpadOn,                         spawn,          SHCMD("synclient TouchpadOff=0") },
+    { 0, XF86XK_TouchpadOff,                        spawn,          SHCMD("synclient TouchpadOff=1") },
+    TAGKEYS(XK_1, 0)
+    TAGKEYS(XK_2, 1)
+    TAGKEYS(XK_3, 2)
+    TAGKEYS(XK_4, 3)
+    TAGKEYS(XK_5, 4)
 };
 
 /* button definitions */
