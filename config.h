@@ -74,6 +74,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_e,           spawn,          SHCMD("$TERMINAL -e nvim") },
     { MODKEY|ShiftMask,             XK_b,           spawn,          SHCMD("$BROWSER") },
     { MODKEY|ShiftMask,             XK_v,           spawn,          SHCMD("vmmenu") },
+    { MODKEY|ShiftMask,             XK_d,           spawn,          SHCMD("discord") },
     { MODKEY|ShiftMask,             XK_m,           spawn,          SHCMD("$TERMINAL -e ncmpcpp") },
     { MODKEY|ShiftMask,             XK_l,           spawn,          SHCMD("passmenu") },
     { MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
